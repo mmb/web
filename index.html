@@ -19,12 +19,7 @@
 
     <script type="text/javascript">
       $(window).on("load", function() {
-        var root, path = window.location.pathname;
-
-        if (path.startsWith("/dashboard")) {
-          root = document.getElementsByTagName('html')[0];
-          root.setAttribute('class', 'beta');
-
+        if (window.location.pathname.startsWith("/dashboard")) {
           app.ports.pinTeamNames.subscribe(function() {
             $(document).on('scroll', function() {
               $(".dashboard-team-name").pin({
